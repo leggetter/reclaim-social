@@ -23,6 +23,7 @@ var config = {
 
 var reclaim = new ReclaimTwitter( config );
 reclaim.getFriends( 'YOUR_SCREEN_NAME', function( err, friends ) {
+	var friendCount = friends.ids.length;
 	reclaim.unfollowAll( friends.ids, function( err, progress, response ) {
 		console.log( 'err: ' + err );
 		console.log( 'status code: ' + response.statusCode );
